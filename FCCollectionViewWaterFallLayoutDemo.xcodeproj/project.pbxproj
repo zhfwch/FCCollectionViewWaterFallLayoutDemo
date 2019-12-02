@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E8065C032394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E8065C012394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m */; };
 		E89EDFF723599AAA00E6DF66 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E89EDFF623599AAA00E6DF66 /* AppDelegate.m */; };
 		E89EDFFA23599AAA00E6DF66 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E89EDFF923599AAA00E6DF66 /* SceneDelegate.m */; };
 		E89EDFFD23599AAA00E6DF66 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E89EDFFC23599AAA00E6DF66 /* ViewController.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E8065C012394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VVSingleSectionHorizontalCollectionViewLayout.m; sourceTree = "<group>"; };
+		E8065C022394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VVSingleSectionHorizontalCollectionViewLayout.h; sourceTree = "<group>"; };
 		E89EDFF223599AAA00E6DF66 /* FCCollectionViewWaterFallLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FCCollectionViewWaterFallLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E89EDFF523599AAA00E6DF66 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E89EDFF623599AAA00E6DF66 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				E89EE01223599CAC00E6DF66 /* NSArray+DataProtect.m */,
 				E89EE01423599E6C00E6DF66 /* FCCollectionDecorationView.h */,
 				E89EE01523599E6C00E6DF66 /* FCCollectionDecorationView.m */,
+				E8065C022394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.h */,
+				E8065C012394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m */,
 			);
 			path = FCCollectionViewWaterFallLayoutDemo;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 				E89EDFFD23599AAA00E6DF66 /* ViewController.m in Sources */,
 				E89EDFF723599AAA00E6DF66 /* AppDelegate.m in Sources */,
 				E89EE00823599AAF00E6DF66 /* main.m in Sources */,
+				E8065C032394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m in Sources */,
 				E89EE01023599AEC00E6DF66 /* FCCollectionViewWaterFallLayout.m in Sources */,
 				E89EE01623599E6C00E6DF66 /* FCCollectionDecorationView.m in Sources */,
 				E89EDFFA23599AAA00E6DF66 /* SceneDelegate.m in Sources */,
