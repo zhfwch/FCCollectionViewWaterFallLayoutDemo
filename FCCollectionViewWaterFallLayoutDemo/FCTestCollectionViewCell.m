@@ -1,29 +1,34 @@
 //
-//  ViewController.m
+//  FCTestCollectionViewCell.m
 //  FCCollectionViewWaterFallLayoutDemo
 //
-//  Created by fwzhou on 2019/10/18.
-//  Copyright © 2019 iOS. All rights reserved.
+//  Created by fwzhou on 2020/1/9.
+//  Copyright © 2020 iOS. All rights reserved.
 //
 
-#import "ViewController.h"
-#import "FCCollectionViewWaterFallLayout.h"
 #import "FCTestCollectionViewCell.h"
+#import "FCCollectionViewWaterFallLayout.h"
 
-@interface ViewController () <UICollectionViewDelegate, UICollectionViewDataSource, FCCollectionViewWaterFallLayoutDelegate>
+@interface FCTestCollectionViewCell () <UICollectionViewDelegate, UICollectionViewDataSource, FCCollectionViewWaterFallLayoutDelegate>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
-@implementation ViewController
+@implementation FCTestCollectionViewCell
 
-- (void)viewDidLoad
+- (instancetype)initWithFrame:(CGRect)frame
 {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    [self.view addSubview:self.collectionView];
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self.contentView addSubview:self.collectionView];
+    }
+    return self;
+}
+
+- (void)update
+{
+    [self.collectionView reloadData];
 }
 
 #pragma mark - UICollectionView datasource
@@ -35,7 +40,7 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 1;
+        return 20;
     } else {
         return 30;
     }
@@ -43,11 +48,6 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0) {
-        FCTestCollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"FCTestCollectionViewCell" forIndexPath:indexPath];
-        [cell update];
-        return cell;
-    }
     UICollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])
                                                                                 forIndexPath:indexPath];
     cell.contentView.backgroundColor = [UIColor purpleColor];
@@ -72,54 +72,41 @@
 #pragma mark - FCCollectionViewWaterFallLayoutDelegate
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout columnNumberAtSection:(NSInteger)section
 {
-    if (section == 0) {
-        return 1;
-    } else {
-        return 2;
-    }
+    return 2;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout heightForRowAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth
 {
-    if (indexPath.section == 0) {
-        return 200;
+    if (indexPath.item % 2 == 0) {
+        return 13;
     } else {
-        if (indexPath.item % 2 == 0) {
-            return 130;
-        } else {
-            return 135;
-        }
+        return 15;
     }
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout referenceHeightForHeaderInSection:(NSInteger)section
 {
-    return 30;
+    return 2;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout referenceHeightForFooterInSection:(NSInteger)section
 {
-    return 20;
+    return 2;
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10, 20, 10, 20);
+    return UIEdgeInsetsMake(2, 2, 2, 2);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout lineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
+    return 2;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(FCCollectionViewWaterFallLayout *)collectionViewLayout interitemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return 10;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.collectionView reloadData];
+    return 2;
 }
 
 #pragma mark - 懒加载
@@ -130,11 +117,9 @@
         flowLayout.sectionHeadersPinToVisibleBounds = YES;
         flowLayout.delegate = self;
         
-        CGRect rect = CGRectMake(0, CGRectGetMinY(self.view.frame) + 88, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
-        _collectionView = [[UICollectionView alloc] initWithFrame:rect collectionViewLayout:flowLayout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:self.frame collectionViewLayout:flowLayout];
         
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
-        [_collectionView registerClass:[FCTestCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([FCTestCollectionViewCell class])];
         
         [_collectionView registerClass:[UICollectionReusableView class]
             forSupplementaryViewOfKind:UICollectionElementKindSectionHeader

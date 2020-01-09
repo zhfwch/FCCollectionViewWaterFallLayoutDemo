@@ -159,17 +159,17 @@
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSArray<UICollectionViewLayoutAttributes *> *tempArray = [_itemLayoutAttributes vv_arrayWithIndex:indexPath.section];
-    return [tempArray vv_objectWithIndex:indexPath.item];
+    NSArray<UICollectionViewLayoutAttributes *> *tempArray = [_itemLayoutAttributes fc_arrayWithIndex:indexPath.section];
+    return [tempArray fc_objectWithIndex:indexPath.item];
 }
 
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath
 {
     if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
-        return [_headerLayoutAttributes vv_objectWithIndex:indexPath.section];
+        return [_headerLayoutAttributes fc_objectWithIndex:indexPath.section];
     }
     if ([elementKind isEqualToString:UICollectionElementKindSectionFooter]) {
-        return [_footerLayoutAttributes vv_objectWithIndex:indexPath.section];
+        return [_footerLayoutAttributes fc_objectWithIndex:indexPath.section];
     }
     return nil;
 }

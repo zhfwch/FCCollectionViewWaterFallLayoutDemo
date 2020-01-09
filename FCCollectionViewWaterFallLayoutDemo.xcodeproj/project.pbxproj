@@ -18,6 +18,7 @@
 		E89EE01023599AEC00E6DF66 /* FCCollectionViewWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = E89EE00F23599AEC00E6DF66 /* FCCollectionViewWaterFallLayout.m */; };
 		E89EE01323599CAC00E6DF66 /* NSArray+DataProtect.m in Sources */ = {isa = PBXBuildFile; fileRef = E89EE01223599CAC00E6DF66 /* NSArray+DataProtect.m */; };
 		E89EE01623599E6C00E6DF66 /* FCCollectionDecorationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E89EE01523599E6C00E6DF66 /* FCCollectionDecorationView.m */; };
+		E8DD70EF23C6C841008F74A7 /* FCTestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E8DD70EE23C6C841008F74A7 /* FCTestCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,8 @@
 		E89EE01223599CAC00E6DF66 /* NSArray+DataProtect.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+DataProtect.m"; sourceTree = "<group>"; };
 		E89EE01423599E6C00E6DF66 /* FCCollectionDecorationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCCollectionDecorationView.h; sourceTree = "<group>"; };
 		E89EE01523599E6C00E6DF66 /* FCCollectionDecorationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCCollectionDecorationView.m; sourceTree = "<group>"; };
+		E8DD70ED23C6C841008F74A7 /* FCTestCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FCTestCollectionViewCell.h; sourceTree = "<group>"; };
+		E8DD70EE23C6C841008F74A7 /* FCTestCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FCTestCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				E89EE01523599E6C00E6DF66 /* FCCollectionDecorationView.m */,
 				E8065C022394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.h */,
 				E8065C012394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m */,
+				E8DD70ED23C6C841008F74A7 /* FCTestCollectionViewCell.h */,
+				E8DD70EE23C6C841008F74A7 /* FCTestCollectionViewCell.m */,
 			);
 			path = FCCollectionViewWaterFallLayoutDemo;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			files = (
 				E89EE01323599CAC00E6DF66 /* NSArray+DataProtect.m in Sources */,
 				E89EDFFD23599AAA00E6DF66 /* ViewController.m in Sources */,
+				E8DD70EF23C6C841008F74A7 /* FCTestCollectionViewCell.m in Sources */,
 				E89EDFF723599AAA00E6DF66 /* AppDelegate.m in Sources */,
 				E89EE00823599AAF00E6DF66 /* main.m in Sources */,
 				E8065C032394B34A001A022F /* VVSingleSectionHorizontalCollectionViewLayout.m in Sources */,
